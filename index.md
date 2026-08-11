@@ -2,10 +2,6 @@
 layout: default
 ---
 
-# Hi, I'm Hilo 👋
-
-**Machines · Systems · Security Research**
-
 Here I document my journey through machines and sherlocks. These write-ups break down each Sherlock step-by-step, covering enumeration strategies, exploitation, privilege escalation, and the key lessons from each one.
 
 ---
@@ -46,4 +42,4 @@ All my write-ups live in the [**Project Hub**](https://github.com/morehilo/proje
 
 ---
 
-*"When something is important enough, you do it even if the odds are not in your favor."*
+<center><i>"The quieter you become, the more you are able to hear"</i></center>
