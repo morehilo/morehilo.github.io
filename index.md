@@ -30,9 +30,7 @@ This was my first documented machine. I focused on clear reasoning, command-by-c
 
 ## 📂 All Documentation
 
-All my write-ups live in the [**Project Hub**](https://github.com/morehilo/project_hub) repository — a growing collection of machines, sherlocks and notes.
-
-[![Last commit](https://img.shields.io/github/last-commit/morehilo/project_hub?style=flat-square&label=Updated)](https://github.com/morehilo/project_hub)
+All my write-ups live in my repository [**Project Hub**](https://github.com/morehilo/project_hub) [![Last commit](https://img.shields.io/github/last-commit/morehilo/project_hub?style=flat-square&label=Updated)](https://github.com/morehilo/project_hub) — a growing collection of machines, sherlocks and notes.
 
 ---
 
