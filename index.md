@@ -25,6 +25,7 @@ This was my first documented machine. I focused on clear reasoning, command-by-c
 | Project | Status | Write-up |
 |---------|--------|----------|
 | Brutus | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Brutus/Brutus.md) |
+| **Unit42** | 🚧 **In Progress** | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Active/Unit42/Unit42.md) |
 
 ---
 
