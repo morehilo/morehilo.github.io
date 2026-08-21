@@ -20,12 +20,12 @@ This was my first documented machine. I focused on clear reasoning, command-by-c
 
 ## 📚 The Archive
 
-*More write-ups coming as I work through new machines.*
+*More write-ups coming as I work through new sherlocks and machines*
 
 | Project | Status | Write-up |
 |---------|--------|----------|
 | Brutus | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Brutus/Brutus.md) |
-| **Unit42** | 🚧 **In Progress** | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Active/Unit42/Unit42.md) |
+| Unit42 | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Unit42/Unit42.md) |
 
 ---
 
@@ -37,8 +37,9 @@ All my write-ups live in my repository [**Project Hub**](https://github.com/more
 
 ## 🛠️ Core Focus Areas
 
-`Linux Internals` `Network Enumeration` `Privilege Escalation`
+`Threat Detection` `Forensics` `SIEM`
 
 ---
+<br><br>
 
 <center><i>"The quieter you become, the more you are able to hear"</i></center>
