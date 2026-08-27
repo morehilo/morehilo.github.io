@@ -2,7 +2,7 @@
 layout: default
 ---
 
-Here I document my journey through machines and sherlocks. These write-ups break down each Sherlock step-by-step, covering enumeration strategies, exploitation, privilege escalation, and the key lessons from each one.
+Here I document my journey through sherlocks and machines. These write-ups break down each Sherlock/Machine step-by-step, covering enumeration strategies, exploitation, privilege escalation, and the key lessons from each one.
 
 ---
 
@@ -23,9 +23,10 @@ This was my first documented machine. I focused on clear reasoning, command-by-c
 *More write-ups coming as I work through new sherlocks and machines*
 
 | Project | Status | Write-up |
-|---------|--------|----------|
+|---------|--------|----------| 
 | Brutus | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Brutus/Brutus.md) |
 | Unit42 | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Unit42/Unit42.md) |
+| BFT | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/BFT/BFT.md) |
 
 ---
 
@@ -40,6 +41,6 @@ All my write-ups live in my repository [**Project Hub**](https://github.com/more
 `Threat Detection` `Forensics` `SIEM`
 
 ---
-<br><br>
+<br>
 
 <center><i>"The quieter you become, the more you are able to hear"</i></center>
