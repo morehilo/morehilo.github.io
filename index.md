@@ -8,13 +8,13 @@ Here I document my journey through sherlocks and machines. These write-ups break
 
 ## 🔍 Featured Write-up
 
-### Brutus — *Very Easy Linux Machine*
+### BFT — *HTB Sherlock*
 
-*A methodical walkthrough covering the "Brute Force", and the different logs in auth.log and the wtmp file.*
+*A methodical walkthrough covering NTFS Master File Table ($MFT) analysis, Zone.Identifier (Mark-of-the-Web) IOCs, MFT record hex offsets and recovering C2 details from an MFT-resident file.*
 
-This was my first documented machine. I focused on clear reasoning, command-by-command explanations, and explaining the *why* behind each step.
+The dots connected really well. As always, I focused on clear reasoning, step-by-step commands, and explaining each finding.
 
-[📘 Read the full case study →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Brutus/Brutus.md)
+[📘 Read it! →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/BFT/BFT.md)
 
 ---
 
@@ -27,6 +27,7 @@ This was my first documented machine. I focused on clear reasoning, command-by-c
 | Brutus | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Brutus/Brutus.md) |
 | Unit42 | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Unit42/Unit42.md) |
 | BFT | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/BFT/BFT.md) |
+| Noxious | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Noxious/Noxious.md) |
 
 ---
 
