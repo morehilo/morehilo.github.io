@@ -28,6 +28,7 @@ The dots connected really well. As always, I focused on clear reasoning, step-by
 | Unit42 | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Unit42/Unit42.md) |
 | BFT | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/BFT/BFT.md) |
 | Noxious | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Noxious/Noxious.md) |
+| PHP-CGI (CVE-2024-4577) | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Easy/PHP-CGI_(CVE-2024-4577)/PHP-CGI_(CVE-2024-4577).md) |
 
 ---
 
@@ -43,5 +44,4 @@ All my write-ups live in my repository [**Project Hub**](https://github.com/more
 
 ---
 <br>
-
 <center><i>"The quieter you become, the more you are able to hear"</i></center>
