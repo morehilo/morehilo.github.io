@@ -3,47 +3,152 @@
 
 @import "{{ site.theme }}";
 
-/* Fondo general más oscuro y tipografía limpia */
+/* --- VARIABLES DE COLOR --- */
+:root {
+  --bg-main: #09090b;      /* Fondo casi negro para la página */
+  --bg-card: #18181b;      /* El gris de las tarjetas */
+  --bg-card-hover: #27272a;
+  --text-main: #e4e4e7;    /* Blanco para leer bien */
+  --text-muted: #a1a1aa;   /* Gris para textos secundarios */
+  --accent: #3b82f6;       /* Azul para enlaces y botones */
+  --border-color: #27272a;
+}
+
+/* --- ESTILOS GLOBALES --- */
 body {
-  background-color: #0d1117; /* Gris muy oscuro tipo GitHub */
-  color: #c9d1d9;
+  background-color: var(--bg-main) !important;
+  color: var(--text-main);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
-/* El contenedor principal del tema slate suele ser muy ancho, lo limito */
 .wrapper {
+  background-color: transparent !important;
   max-width: 1200px;
-  display: flex; 
-  gap: 2rem;
 }
 
-header {
-  width: 280px;
-  flex-shrink: 0;
-  border-right: 1px solid #30363d;
-  padding-right: 1rem;
+/* --- HEADER (Perfil) --- */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
-/* Estilo para las tarjetas de write-ups */
-.writeup-card {
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 6px;
-  padding: 1.5rem;
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+  border-color: var(--accent);
+}
+
+.profile-info h1 { margin: 0 0 0.5rem 0; }
+.profile-info p { margin: 0 0 0.5rem 0; color: var(--text-muted); }
+
+/* --- CONTROLES DE VISTA --- */
+.view-controls {
+  display: flex;
+  justify-content: flex-end;
   margin-bottom: 1rem;
-  transition: border-color 0.2s;
+  gap: 10px;
+}
+
+.btn-view {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-view:hover, .btn-view.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* --- GRID DE PROYECTOS (Modo Netflix) --- */
+.writeups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* --- TARJETA INDIVIDUAL --- */
+.writeup-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .writeup-card:hover {
-  border-color: #58a6ff; /* Un azul sutil al pasar el ratón */
+  background: var(--bg-card-hover);
+  border-color: #52525b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Etiquetas de herramientas (Wireshark, Volatility...) */
-.tag {
-  background: #21262d;
-  color: #8b949e;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  font-family: monospace;
+.writeup-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
 }
+
+.writeup-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  flex-grow: 1; /* Empuja el botón hacia abajo */
+  margin-bottom: 1rem;
+}
+
+.writeup-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.writeup-link:hover {
+  text-decoration: underline;
+}
+
+/* --- TAGS --- */
+.tags-container { margin-bottom: 1rem; }
+.tag {
+  background: #27272a;
+  color: #d4d4d8;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-family: monospace;
+  margin-right: 6px;
+  border: 1px solid #3f3f46;
+}
+
+/* --- VISTA DE LISTA (con boton) --- */
+.writeups-grid.list-view {
+  display: flex;
+  flex-direction: column;
+}
+.writeups-grid.list-view .writeup-card {
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+}
+.writeups-grid.list-view h3 { margin: 0; width: 250px; }
+.writeups-grid.list-view .writeup-desc { margin: 0; flex-grow: 1; }
+.writeups-grid.list-view .tags-container { margin: 0 1.5rem; }
