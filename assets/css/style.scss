@@ -8,9 +8,9 @@
   --bg-main: #09090b;      /* Fondo casi negro para la página */
   --bg-card: #18181b;      /* El gris de las tarjetas */
   --bg-card-hover: #27272a;
-  --text-main: #e4e4e7;    /* Blanco para leer bien */
-  --text-muted: #a1a1aa;   /* Gris para textos secundarios */
-  --accent: #3b82f6;       /* Azul para enlaces y botones */
+  --text-main: #e4e4e7;    
+  --text-muted: #a1a1aa;   
+  --accent: #3b82f6;       
   --border-color: #27272a;
 }
 
@@ -20,6 +20,11 @@ body {
   color: var(--text-main);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
+
+
+.project-name { display: none !important; }
+.project-tagline { display: none !important; }
+
 
 .wrapper {
   background-color: transparent !important;
@@ -37,8 +42,8 @@ body {
 }
 
 .profile-avatar {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--border-color);
@@ -50,7 +55,7 @@ body {
   border-color: var(--accent);
 }
 
-.profile-info h1 { margin: 0 0 0.5rem 0; }
+.profile-info h1 { margin: 0 0 0.5rem 0; font-size: 1.8rem; }
 .profile-info p { margin: 0 0 0.5rem 0; color: var(--text-muted); }
 
 /* --- CONTROLES DE VISTA --- */
@@ -78,14 +83,7 @@ body {
   border-color: var(--accent);
 }
 
-/* --- GRID DE PROYECTOS (Modo Netflix) --- */
-.writeups-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-/* --- TARJETA INDIVIDUAL --- */
+/* --- TARJETAS BASE --- */
 .writeup-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -94,25 +92,21 @@ body {
   transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .writeup-card:hover {
   background: var(--bg-card-hover);
   border-color: #52525b;
-  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.writeup-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-}
+.writeup-card h3 { margin-top: 0; margin-bottom: 0.5rem; font-size: 1.25rem; }
 
 .writeup-desc {
   color: var(--text-muted);
   font-size: 0.9rem;
-  flex-grow: 1; /* Empuja el botón hacia abajo */
+  flex-grow: 1;
   margin-bottom: 1rem;
 }
 
@@ -122,12 +116,14 @@ body {
   font-weight: bold;
 }
 
-.writeup-link:hover {
-  text-decoration: underline;
+/* --- TAGS (Arreglados para que no se rompan)  */
+.tags-container { 
+  display: flex; 
+  flex-wrap: wrap; /* Permite que pasen a la siguiente línea si no caben */
+  gap: 8px; /* Espacio entre tags */
+  margin-bottom: 1rem; 
 }
 
-/* --- TAGS --- */
-.tags-container { margin-bottom: 1rem; }
 .tag {
   background: #27272a;
   color: #d4d4d8;
@@ -135,20 +131,42 @@ body {
   border-radius: 4px;
   font-size: 0.75rem;
   font-family: monospace;
-  margin-right: 6px;
   border: 1px solid #3f3f46;
+  white-space: nowrap; /* Evita que el texto del tag se parta en dos líneas */
 }
 
-/* --- VISTA DE LISTA (con boton) --- */
-.writeups-grid.list-view {
+/* --- VISTA DE LISTA (Predeterminada) --- */
+.writeups-container.list-view {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
-.writeups-grid.list-view .writeup-card {
+.writeups-container.list-view .writeup-card {
   flex-direction: row;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
 }
-.writeups-grid.list-view h3 { margin: 0; width: 250px; }
-.writeups-grid.list-view .writeup-desc { margin: 0; flex-grow: 1; }
-.writeups-grid.list-view .tags-container { margin: 0 1.5rem; }
+.writeups-container.list-view h3 { margin: 0; width: 200px; flex-shrink: 0; }
+.writeups-container.list-view .writeup-desc { margin: 0; flex-grow: 1; }
+.writeups-container.list-view .tags-container { margin: 0 1.5rem; width: 250px; justify-content: flex-end;}
+.writeups-container.list-view .writeup-link { white-space: nowrap; }
+
+/* --- VISTA CARRUSEL (Netflix 1 a 1) --- */
+.writeups-container.carousel-view {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* Hace que se quede "pegado" a la tarjeta */
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  scrollbar-width: thin; /* Scrollbar fina */
+}
+
+/* Ocultar barra de scroll estándar para que quede más limpio */
+.writeups-container.carousel-view::-webkit-scrollbar { height: 8px; }
+.writeups-container.carousel-view::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
+
+.writeups-container.carousel-view .writeup-card {
+  min-width: 100%; /* Fuerza a que ocupe todo el ancho para que sea de 1 en 1 */
+  scroll-snap-align: start; 
+  flex-shrink: 0;
+}
