@@ -3,7 +3,6 @@ layout: default
 ---
 
 <div class="profile-header">
-  <!-- El enlace (href) hace que salga la URL abajo a la izquierda al pasar el ratón -->
   <a href="https://github.com/morehilo" target="_blank">
     <img src="https://github.com/morehilo.png" alt="Hilo Profile" class="profile-avatar">
   </a>
@@ -21,11 +20,11 @@ layout: default
 </p>
 
 <div class="view-controls">
-  <button class="btn-view active" onclick="setView('grid')">🔲 Tarjetas</button>
-  <button class="btn-view" onclick="setView('list')">📋 Lista</button>
+  <button class="btn-view" onclick="setView('carousel')">🎠 Carrusel</button>
+  <button class="btn-view active" onclick="setView('list')">📋 Lista</button>
 </div>
 
-<div class="writeups-grid" id="writeups-container">
+<div class="writeups-container list-view" id="writeups-container">
 
   <!-- BFT -->
   <div class="writeup-card">
@@ -101,7 +100,6 @@ layout: default
 
 </div>
 
-<!-- SCRIPT PARA CAMBIAR ENTRE VISTA DE TARJETAS Y LISTA -->
 <script>
   function setView(view) {
     const container = document.getElementById('writeups-container');
@@ -109,13 +107,14 @@ layout: default
     
     // Resetear clases de botones
     buttons.forEach(btn => btn.classList.remove('active'));
+    container.className = 'writeups-container';
     
-    if (view === 'list') {
+    if (view === 'carousel') {
+      container.classList.add('carousel-view');
+      buttons[0].classList.add('active');
+    } else {
       container.classList.add('list-view');
       buttons[1].classList.add('active');
-    } else {
-      container.classList.remove('list-view');
-      buttons[0].classList.add('active');
     }
   }
 </script>
