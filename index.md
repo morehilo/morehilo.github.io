@@ -2,47 +2,33 @@
 layout: default
 ---
 
-Here I document my journey through sherlocks and machines. These write-ups break down each Sherlock/Machine step-by-step, covering enumeration strategies, exploitation, privilege escalation, and the key lessons from each one.
+<div class="sidebar">
+  <h1>Hi, I'm Hilo 👋</h1>
+  <p>Threat Detection · Incident Response · Security Monitoring</p>
+  <p><strong>Portfolio Junior SOC Analyst - Open to work España/Remoto</strong> Aquí documento mi viaje por Sherlocks y máquinas.</p>
+  <hr>
+  <p><a href="https://github.com/morehilo/project_hub">GitHub</a> | <a href="#">LinkedIn</a> | <a href="#">CV</a></p>
+</div>
 
----
-
-## 🔍 Featured Write-up
-
-### BFT — *HTB Sherlock*
-
-*A methodical walkthrough covering NTFS Master File Table ($MFT) analysis, Zone.Identifier (Mark-of-the-Web) IOCs, MFT record hex offsets and recovering C2 details from an MFT-resident file.*
-
-The dots connected really well. As always, I focused on clear reasoning, step-by-step commands, and explaining each finding.
-
-[📘 Read it! →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/BFT/BFT.md)
-
----
-
-## 📚 The Archive
-
-*More write-ups coming as I work through new sherlocks and machines*
-
-| Project | Status | Write-up |
-|---------|--------|----------| 
-| Brutus | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Brutus/Brutus.md) |
-| Unit42 | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Unit42/Unit42.md) |
-| BFT | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/BFT/BFT.md) |
-| Noxious | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Noxious/Noxious.md) |
-| PHP-CGI (CVE-2024-4577) | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Easy/PHP-CGI_(CVE-2024-4577)/PHP-CGI_(CVE-2024-4577).md) |
-| Bumblebee | ✅ Completed | [Read →](https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Easy/Bumblebee/Bumblebee.md) |
-
----
-
-## 📂 All Documentation
-
-All my write-ups live in my repository [**Project Hub**](https://github.com/morehilo/project_hub) [![Last commit](https://img.shields.io/github/last-commit/morehilo/project_hub?style=flat-square&label=Updated)](https://github.com/morehilo/project_hub) — a growing collection of machines, sherlocks and notes.
-
----
-
-## 🛠️ Core Focus Areas
-
-`Threat Detection` `Forensics` `SIEM`
-
----
-<br>
-<center><i>"The quieter you become, the more you are able to hear"</i></center>
+<div class="content">
+  <h2>Featured Write-up</h2>
+  
+  {% assign projects = "BFT,Brutus,Unit42,Noxious,PHP-CGI,Bumblebee" | split: "," %}
+  {% assign links = "https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/BFT/BFT.md,https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Brutus/Brutus.md,https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Unit42/Unit42.md,https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Very-Easy/Noxious/Noxious.md,https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Easy/PHP-CGI_(CVE-2024-4577)/PHP-CGI_(CVE-2024-4577).md,https://github.com/morehilo/project_hub/blob/master/Machines/01-Sherlocks/Completed/Easy/Bumblebee/Bumblebee.md" | split: "," %}
+  
+  {% for project in projects %}
+    {% assign index = forloop.index0 %}
+    {% assign link = links[index] %}
+    
+    <div class="writeup-card">
+      <h3>{{ project }}</h3>
+      <span class="tag">Sherlock</span>
+      <span class="tag">Forensics</span>
+      <p style="margin-top: 10px; font-size: 0.9rem; color: #8b949e;">
+        Walkthrough detallado cubriendo enumeración, análisis y lecciones aprendidas.
+      </p>
+      <a href="{{ link }}" style="color: #58a6ff; text-decoration: none; font-weight: bold;">Read Write-up →</a>
+    </div>
+    
+  {% endfor %}
+</div>
